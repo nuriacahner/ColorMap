@@ -1,0 +1,13 @@
+{
+    "autodeskProduct": "Fusion360",
+    "type": "addin",
+    "id": "8c41e6a3-2f97-4b5d-a0e8-71d3c9f5b264",
+    "author": "Núria Cahner",
+    "description": {
+        "": "Color Map: show a Mimics color map (PLY with vertex colors) on the bones, with its own colors. Inspect > Color Map."
+    },
+    "version": "0.2.0",
+    "runOnStartup": true,
+    "supportedOS": "windows|mac",
+    "editEnabled": true
+}
