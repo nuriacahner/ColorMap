@@ -1,13 +1,11 @@
 # Color Map (ColorMap)
 
-A Fusion add-in that shows a **color map on a bone**: a mesh with one color per vertex,
+A Fusion 360 add-in that shows a **color map on a bone**: a mesh with one color per vertex,
 exported as a PLY file, drawn on the model with its own colors. For example:
 - a vertex-color map made in Mimics;
 - a density map made from the CT by the DensityMap tool (separate repository).
 
 A **legend panel** shows the color scale and the information of each map.
-
-**Inspect → Color Map** and **Inspect → Color Map Legend**
 
 ## Why
 
@@ -20,6 +18,8 @@ vertex. The map lands on the bone where it belongs, as long as both were exporte
 same coordinates (Mimics exports its parts that way).
 
 ## Using it
+
+**Inspect → Color Map** and **Inspect → Color Map Legend**
 
 ### Color Map
 
