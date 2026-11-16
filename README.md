@@ -2,8 +2,8 @@
 
 A Fusion 360 add-in that shows a **color map on a bone**: a mesh with one color per vertex,
 exported as a PLY file, drawn on the model with its own colors. For example:
-- a vertex-color map made in Mimics;
-- a density map made from the CT by the DensityMap tool (separate repository).
+- A vertex-color map made in Mimics;
+- A density map made from the CT by the DensityMap tool (separate repository).
 
 A **legend panel** shows the color scale and the information of each map.
 
@@ -11,7 +11,7 @@ A **legend panel** shows the color scale and the information of each map.
 
 Fusion can't show a mesh's own colors:
 - **Insert Mesh drops them** from 3MF and OBJ files: the body comes in one color;
-- **it doesn't accept PLY at all,** the usual format for vertex colors.
+- **It doesn't accept PLY at all,** the usual format for vertex colors.
 
 This add-in reads the PLY and draws it with Fusion's custom graphics, which can color each
 vertex. The map lands on the bone where it belongs, as long as both were exported in the
@@ -26,11 +26,16 @@ same coordinates (Mimics exports its parts that way).
 1. Open **Color Map** and press **Add PLY files…** You can pick several files at once.
    Each is read straight away; a file that can't be used is reported in the dialog.
 2. Each map is a row in the table, with a **Show** box:
-   - ticked, the map is drawn on the model;
-   - unticked, it's taken off the model but stays stored, so you can show it again later.
+   - Ticked, the map is drawn on the model;
+   - Unticked, it's taken off the model but stays stored, so you can show it again later.
 3. To delete a map from the design: click its name, then **Delete selected**. The PLY
    file on disk is never touched.
 4. Press **Apply**.
+
+<p align="center">
+  <img src="docs_colormap/img/plydialog.PNG" width="400"><br>
+  <em>Figure 1. ColorMap Dialog </em>
+</p>
 
 Each map is **stored inside the design**, so it travels with the file and the original PLY
 isn't needed afterwards. Adding a file with the same name replaces the stored map.
@@ -38,17 +43,17 @@ isn't needed afterwards. Adding a file with the same name replaces the stored ma
 ### Color Map Legend
 
 **Color Map Legend** opens a panel docked on the right. For each map shown, it displays:
-- the color bar with its scale marks (e.g. every 100 HU);
-- the information lines: method, data, range, values, date.
+- The color bar with its scale marks (e.g. every 100 HU);
+- The information lines: method, data, range, values, date.
 
 The same button closes the panel.
 
 The legend comes from:
-1. **the PLY itself:** maps made by the DensityMap tool carry their legend inside the file,
+1. **The PLY itself:** maps made by the DensityMap tool carry their legend inside the file,
    so it's stored in the design together with the map;
-2. **otherwise, a `<name>_leyenda.svg` file** next to the original PLY, if it can still be
+2. **Otherwise, a `<name>_leyenda.svg` file** next to the original PLY, if it can still be
    found. The panel then says so;
-3. **otherwise,** the panel says the map has no legend (e.g. a map exported directly from
+3. **Otherwise,** the panel says the map has no legend (e.g. a map exported directly from
    Mimics).
 
 ## Install
@@ -98,10 +103,10 @@ No extra Python packages are needed.
 ## Tests
 
 There are no automated tests. The add-in was tested inside Fusion, in throwaway documents:
-- storing, drawing, showing and hiding maps;
-- deleting a map;
-- removing the drawings before a save and redrawing them after;
-- a 1 MB map.
+- Storing, drawing, showing and hiding maps;
+- Deleting a map;
+- Removing the drawings before a save and redrawing them after;
+- A 1 MB map.
 
 The PLY and legend readers were also tested outside Fusion, on real and hand-written files.
 
